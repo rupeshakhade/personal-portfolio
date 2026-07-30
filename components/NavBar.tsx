@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
@@ -46,21 +45,46 @@ export default function NavBar() {
       <div className="hidden items-center gap-3 md:flex">
         {socials.map((social) => {
           const Icon = social.icon;
+          const label = social.href.includes('github.com')
+            ? 'Visit GitHub profile'
+            : social.href.includes('linkedin.com')
+            ? 'Visit LinkedIn profile'
+            : 'Send email';
+
           return (
-            <a key={social.href} href={social.href} target="_blank" rel="noreferrer" className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-700/80 bg-slate-900/80 text-slate-200 transition hover:border-sky-300 hover:text-sky-100">
+            <a
+              key={social.href}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-700/80 bg-slate-900/80 text-slate-200 transition hover:border-sky-300 hover:text-sky-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-400/70"
+            >
               <Icon size={18} />
             </a>
           );
         })}
       </div>
-      <button type="button" onClick={() => setOpen(!open)} className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-700/80 bg-slate-900/80 text-slate-200 transition hover:border-sky-300 md:hidden">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        aria-controls="mobile-navigation"
+        aria-expanded={open}
+        aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+        className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-700/80 bg-slate-900/80 text-slate-200 transition hover:border-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-400/70 md:hidden"
+      >
         {open ? <X size={18} /> : <Menu size={18} />}
       </button>
       {open && (
-        <div className="absolute left-0 right-0 top-full z-40 rounded-b-[2rem] border border-slate-700/70 bg-slate-950/95 p-6 shadow-glow md:hidden">
+        <div id="mobile-navigation" className="absolute left-0 right-0 top-full z-40 rounded-b-[2rem] border border-slate-700/70 bg-slate-950/95 p-6 shadow-glow md:hidden">
           <div className="grid gap-4">
             {navItems.map((item) => (
-              <a key={item.label} href={item.href} onClick={() => setOpen(false)} className="text-sm text-slate-200 transition hover:text-sky-300">
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="text-sm text-slate-200 transition hover:text-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-400/70"
+              >
                 {item.label}
               </a>
             ))}

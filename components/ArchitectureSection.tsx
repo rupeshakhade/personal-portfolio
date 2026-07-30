@@ -15,11 +15,11 @@ const diagrams = [
 
 export default function ArchitectureSection() {
   return (
-    <section id="architecture" className="mt-24 rounded-[2rem] border border-white/10 bg-slate-950/70 p-8 shadow-glow backdrop-blur-xl">
+    <section id="architecture" className="mt-24 rounded-[2rem] border border-slate-700/50 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/90 p-8 shadow-glow backdrop-blur-xl">
       <SectionHeader title="Architecture" description="Platform visuals" />
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {diagrams.map((diagram, index) => (
-          <motion.div key={diagram.title} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="group rounded-[2rem] border border-slate-700/70 bg-slate-900/85 p-6 text-slate-200 shadow-sm transition hover:-translate-y-1 hover:border-sky-400/40 hover:bg-slate-950/95">
+          <motion.div key={diagram.title} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="group rounded-[2rem] border border-slate-700/70 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/95 p-6 text-slate-200 shadow-sm transition hover:-translate-y-1 hover:border-fuchsia-400/40 hover:bg-slate-950/95">
             <div className="mb-4 flex items-center justify-between">
               <div className="space-y-1">
                 <p className="text-sm uppercase tracking-[0.3em] text-sky-300/90">Diagram</p>

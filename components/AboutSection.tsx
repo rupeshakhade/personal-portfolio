@@ -14,7 +14,7 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="mt-24 rounded-[2rem] border border-white/10 bg-slate-950/70 p-8 shadow-glow backdrop-blur-xl">
+    <section id="about" className="mt-24 rounded-[2rem] border border-slate-700/50 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/90 p-8 shadow-glow backdrop-blur-xl">
       <SectionHeader title="About" description="Professional overview" />
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
         <div className="space-y-6 text-slate-300">
@@ -27,7 +27,7 @@ export default function AboutSection() {
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {highlights.map((item) => (
-            <div key={item} className="rounded-3xl border border-slate-700/70 bg-slate-900/80 px-5 py-4 shadow-sm transition hover:border-sky-400/40 hover:bg-slate-900/95">
+            <div key={item} className="rounded-3xl border border-slate-700/70 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-slate-950/90 px-5 py-4 shadow-sm transition hover:border-fuchsia-400/40 hover:bg-slate-900/95">
               <p className="text-sm font-medium text-slate-100">{item}</p>
             </div>
           ))}

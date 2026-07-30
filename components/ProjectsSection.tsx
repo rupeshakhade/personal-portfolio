@@ -62,14 +62,16 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="mt-24 rounded-[2rem] border border-white/10 bg-slate-950/70 p-8 shadow-glow backdrop-blur-xl">
+    <section id="projects" className="mt-24 rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-900/80 to-slate-950/80 p-8 shadow-glow backdrop-blur-xl">
       <SectionHeader title="Projects" description="Enterprise-grade deliveries" />
       <div className="grid gap-6 xl:grid-cols-2">
         {projects.map((project, index) => (
-          <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08 }} className="group rounded-[2rem] border border-slate-700/70 bg-slate-900/80 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-400/40 hover:bg-slate-950/95">
-            <div className="mb-4 flex items-center justify-between">
+          <motion.div key={project.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08 }} className="group rounded-[2rem] border border-slate-700/70 bg-slate-950/95 p-6 shadow-[0_25px_60px_rgba(79,70,229,0.16)] transition duration-300 hover:-translate-y-1 hover:border-fuchsia-400/30 hover:bg-slate-900/95">
+            <div className="mb-4 flex items-center justify-between gap-4">
               <p className="text-sm uppercase tracking-[0.25em] text-sky-300/90">Project</p>
-              <span className="rounded-full bg-slate-800/90 px-3 py-1 text-xs uppercase text-slate-300">{project.technologies[0]}</span>
+              <span className="rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 px-3 py-1 text-xs uppercase text-slate-950 shadow-sm shadow-cyan-500/20">
+                {project.technologies[0]}
+              </span>
             </div>
             <h3 className="mb-4 text-2xl font-semibold text-slate-100">{project.title}</h3>
             <div className="space-y-3 text-sm leading-7 text-slate-300">
@@ -80,14 +82,16 @@ export default function ProjectsSection() {
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-2">
               {project.technologies.map((technology) => (
-                <span key={technology} className="rounded-full bg-slate-950/80 px-3 py-1 text-xs text-slate-200">{technology}</span>
+                <span key={technology} className="rounded-full bg-slate-950/80 px-3 py-1 text-xs text-slate-200 shadow-sm shadow-sky-500/10">
+                  {technology}
+                </span>
               ))}
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-sky-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-sky-300">
+              <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:from-cyan-300 hover:via-sky-300 hover:to-indigo-400">
                 GitHub
               </a>
-              <span className="inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-900/80 px-4 py-2 text-sm text-slate-300">
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-900/90 px-4 py-2 text-sm text-slate-300">
                 Live demo
               </span>
             </div>

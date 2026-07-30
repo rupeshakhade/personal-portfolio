@@ -1,5 +1,3 @@
-'use client';
-
 import SectionHeader from './SectionHeader';
 
 const articles = [

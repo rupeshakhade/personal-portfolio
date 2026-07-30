@@ -48,16 +48,16 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="mt-24 rounded-[2rem] border border-white/10 bg-slate-950/70 p-8 shadow-glow backdrop-blur-xl">
+    <section id="experience" className="mt-24 rounded-[2rem] border border-slate-700/50 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/90 p-8 shadow-glow backdrop-blur-xl">
       <SectionHeader title="Experience" description="Professional timeline" />
       <div className="grid gap-6 lg:grid-cols-3">
         {experiences.map((experience, index) => (
-          <motion.div key={experience.company} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.5 }} className="rounded-[2rem] border border-slate-700/70 bg-slate-900/80 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-400/40">
+          <motion.div key={experience.company} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.5 }} className="rounded-[2rem] border border-slate-700/70 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/95 p-6 shadow-sm transition hover:-translate-y-1 hover:border-fuchsia-400/30">
             <div className="mb-4 space-y-2 text-slate-300">
-              <p className="text-xs uppercase tracking-[0.3em] text-sky-300/90">{experience.company}</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/95">{experience.company}</p>
               <h3 className="text-xl font-semibold text-slate-100">{experience.title}</h3>
-              <p className="text-sm text-slate-400">{experience.date}</p>
-              <p className="text-sm text-slate-400">{experience.location}</p>
+              <p className="text-sm text-slate-300">{experience.date}</p>
+              <p className="text-sm text-slate-300">{experience.location}</p>
             </div>
             <ul className="space-y-3 text-sm leading-7 text-slate-300">
               {experience.highlights.map((item) => (

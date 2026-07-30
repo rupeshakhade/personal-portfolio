@@ -3,7 +3,12 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, Linkedin, Mail, Cloud, Terminal, Code2, Database } from 'lucide-react';
 
-const techIcons = [Cloud, Terminal, Code2, Database];
+const techCards = [
+  { icon: Cloud, title: 'Cloud Automation' },
+  { icon: Terminal, title: 'Kubernetes Lifecycle' },
+  { icon: Code2, title: 'Infrastructure as Code' },
+  { icon: Database, title: 'Observability' },
+];
 const commands = [
   'kubectl get pods',
   'terraform apply',
@@ -20,28 +25,32 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-indigo-500/5 opacity-80" />
       <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="space-y-6">
-          <span className="inline-flex items-center gap-3 rounded-full border border-sky-500/20 bg-slate-900/70 px-4 py-2 text-sm text-sky-200 shadow-sm">
+          <span className="inline-flex items-center gap-3 rounded-full border border-sky-500/20 bg-gradient-to-r from-slate-900/90 via-slate-950/90 to-slate-900/90 px-4 py-2 text-sm text-slate-100 shadow-sm shadow-cyan-500/20">
             <Cloud size={18} className="text-sky-400" /> Enterprise Cloud & DevOps
           </span>
           <div className="space-y-4">
-            <p className="text-sm uppercase tracking-[0.3em] text-sky-300/80">Senior DevOps & Cloud Engineer</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-sky-200/90">Senior DevOps & Cloud Engineer</p>
             <h1 className="text-5xl font-semibold tracking-tight text-slate-100 sm:text-6xl">
-              Building scalable cloud infrastructure, automated CI/CD, and secure Kubernetes platforms.
+              Building scalable cloud infrastructure, automated CI/CD, and secure{' '}
+              <span className="bg-gradient-to-r from-cyan-300 via-fuchsia-300 to-indigo-300 bg-clip-text text-transparent">Kubernetes platforms</span>.
             </h1>
             <p className="max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
               Experienced in AWS, Azure, GitOps, Terraform, Kubernetes, and DevSecOps for enterprise-grade production systems. I design resilient cloud architecture and platform engineering solutions that scale.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 via-indigo-500 to-fuchsia-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/20 transition hover:from-sky-300 hover:to-fuchsia-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-400/70"
+            >
               View Projects
               <ArrowRight size={16} />
             </a>
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/90 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-sky-300 hover:text-sky-300">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/90 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-fuchsia-400 hover:text-fuchsia-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-fuchsia-400/70"
+            >
               Contact Me
-            </a>
-            <a href="#resume" className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/90 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-sky-300 hover:text-sky-300">
-              Download Resume
             </a>
           </div>
           <div className="flex flex-wrap gap-4 text-slate-300">
@@ -64,12 +73,11 @@ export default function HeroSection() {
           <div className="absolute -top-10 right-4 hidden h-28 w-28 rounded-full bg-sky-500/10 blur-2xl lg:block" />
           <div className="space-y-6">
             <div className="grid gap-3 sm:grid-cols-2">
-              {techIcons.map((Icon, index) => (
-                <motion.div key={index} initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: index * 0.1 }} className="flex items-center gap-3 rounded-3xl border border-white/10 bg-slate-950/75 px-4 py-4 shadow-sm">
+              {techCards.map(({ icon: Icon, title }, index) => (
+                <motion.div key={title} initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: index * 0.1 }} className="flex items-center gap-3 rounded-3xl border border-white/10 bg-slate-950/75 px-4 py-4 shadow-sm">
                   <Icon size={22} className="text-sky-300" />
                   <div>
-                    <p className="text-sm text-slate-400">Platform</p>
-                    <p className="text-sm font-semibold text-slate-100">Cloud Automation</p>
+                    <p className="text-sm font-semibold text-slate-100">{title}</p>
                   </div>
                 </motion.div>
               ))}
