@@ -70,29 +70,29 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="mt-24 rounded-[2rem] border border-white/10 bg-slate-950/70 p-8 shadow-glow backdrop-blur-xl">
+    <section id="contact" className="mt-24 rounded-[2rem] border border-slate-200/80 bg-white/95 p-8 shadow-glow">
       <SectionHeader title="Contact" description="Send a message" />
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-        <div className="rounded-[2rem] border border-slate-700/70 bg-slate-900/80 p-8 shadow-sm">
-          <p className="text-slate-300">Let's connect for enterprise cloud automation, platform engineering, and platform reliability work.</p>
-          <div className="mt-8 space-y-4 text-slate-200">
+        <div className="rounded-[2rem] border border-slate-200/70 bg-slate-50 p-8 shadow-sm">
+          <p className="text-slate-700">Let's connect for enterprise cloud automation, platform engineering, and platform reliability work.</p>
+          <div className="mt-8 space-y-4 text-slate-700">
             <p>Email: rupeshakhade1998@gmail.com</p>
             <p>LinkedIn: linkedin.com/in/rupesh-akhade</p>
             <p>GitHub: github.com/rupeshakhade</p>
           </div>
         </div>
-        <motion.form onSubmit={handleSubmit(onSubmit)} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-5 rounded-[2rem] border border-slate-700/70 bg-slate-900/80 p-8 shadow-sm">
-          <label className="block space-y-2 text-sm text-slate-300">
+        <motion.form onSubmit={handleSubmit(onSubmit)} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="space-y-5 rounded-[2rem] border border-slate-200/70 bg-slate-50 p-8 shadow-sm">
+          <label className="block space-y-2 text-sm text-slate-700">
             <span>Name</span>
-            <input type="text" {...register('name')} className="w-full rounded-3xl border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20" required />
+            <input type="text" {...register('name')} className="w-full rounded-3xl border border-slate-200/70 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20" required />
           </label>
-          <label className="block space-y-2 text-sm text-slate-300">
+          <label className="block space-y-2 text-sm text-slate-700">
             <span>Email</span>
-            <input type="email" {...register('email')} className="w-full rounded-3xl border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20" required />
+            <input type="email" {...register('email')} className="w-full rounded-3xl border border-slate-200/70 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20" required />
           </label>
-          <label className="block space-y-2 text-sm text-slate-300">
+          <label className="block space-y-2 text-sm text-slate-700">
             <span>Message</span>
-            <textarea {...register('message')} rows={5} className="w-full rounded-3xl border border-slate-700/70 bg-slate-950/80 px-4 py-3 text-slate-100 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20" required />
+            <textarea {...register('message')} rows={5} className="w-full rounded-3xl border border-slate-200/70 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20" required />
           </label>
           {statusMessage && (
             <p
@@ -110,7 +110,7 @@ export default function ContactSection() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`inline-flex items-center justify-center gap-2 rounded-full bg-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300 ${isSubmitting ? 'cursor-not-allowed opacity-80' : ''}`}
+            className={`inline-flex items-center justify-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-500 ${isSubmitting ? 'cursor-not-allowed opacity-80' : ''}`}
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>

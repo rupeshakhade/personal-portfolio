@@ -21,20 +21,20 @@ const commands = [
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/70 px-6 py-12 shadow-glow backdrop-blur-xl lg:px-10">
+    <section id="home" className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white/95 px-6 py-12 shadow-glow lg:px-10">
       <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-indigo-500/5 opacity-80" />
       <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="space-y-6">
-          <span className="inline-flex items-center gap-3 rounded-full border border-sky-500/20 bg-gradient-to-r from-slate-900/90 via-slate-950/90 to-slate-900/90 px-4 py-2 text-sm text-slate-100 shadow-sm shadow-cyan-500/20">
-            <Cloud size={18} className="text-sky-400" /> Enterprise Cloud & DevOps
+          <span className="inline-flex items-center gap-3 rounded-full border border-sky-200/80 bg-slate-50 px-4 py-2 text-sm text-slate-950 shadow-sm shadow-cyan-100">
+            <Cloud size={18} className="text-sky-600" /> Enterprise Cloud & DevOps
           </span>
           <div className="space-y-4">
-            <p className="text-sm uppercase tracking-[0.3em] text-sky-200/90">Senior DevOps & Cloud Engineer</p>
-            <h1 className="text-5xl font-semibold tracking-tight text-slate-100 sm:text-6xl">
+            <p className="text-sm uppercase tracking-[0.3em] text-sky-600/90">Senior DevOps & Cloud Engineer</p>
+            <h1 className="text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
               Building scalable cloud infrastructure, automated CI/CD, and secure{' '}
-              <span className="bg-gradient-to-r from-cyan-300 via-fuchsia-300 to-indigo-300 bg-clip-text text-transparent">Kubernetes platforms</span>.
+              <span className="bg-gradient-to-r from-cyan-600 via-fuchsia-500 to-indigo-600 bg-clip-text text-transparent">Kubernetes platforms</span>.
             </h1>
-            <p className="max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+            <p className="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
               Experienced in AWS, Azure, GitOps, Terraform, Kubernetes, and DevSecOps for enterprise-grade production systems. I design resilient cloud architecture and platform engineering solutions that scale.
             </p>
           </div>
@@ -48,12 +48,12 @@ export default function HeroSection() {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/90 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-fuchsia-400 hover:text-fuchsia-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-fuchsia-400/70"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:border-sky-300 hover:text-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-400/70"
             >
               Contact Me
             </a>
           </div>
-          <div className="flex flex-wrap gap-4 text-slate-300">
+          <div className="flex flex-wrap gap-4 text-slate-700">
             {[
               { icon: Github, href: 'https://github.com/rupeshakhade' },
               { icon: Linkedin, href: 'https://www.linkedin.com/in/rupesh-akhade' },
@@ -61,7 +61,7 @@ export default function HeroSection() {
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <a key={item.href} href={item.href} target="_blank" rel="noreferrer" className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-700/80 bg-slate-900/80 text-slate-200 transition hover:border-sky-300 hover:text-sky-100">
+                <a key={item.href} href={item.href} target="_blank" rel="noreferrer" className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200/80 bg-white text-slate-700 transition hover:border-sky-300 hover:text-sky-600">
                   <Icon size={20} />
                 </a>
               );
@@ -69,29 +69,29 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/80 p-6 shadow-glow backdrop-blur-xl">
+        <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-glow">
           <div className="absolute -top-10 right-4 hidden h-28 w-28 rounded-full bg-sky-500/10 blur-2xl lg:block" />
           <div className="space-y-6">
             <div className="grid gap-3 sm:grid-cols-2">
               {techCards.map(({ icon: Icon, title }, index) => (
-                <motion.div key={title} initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: index * 0.1 }} className="flex items-center gap-3 rounded-3xl border border-white/10 bg-slate-950/75 px-4 py-4 shadow-sm">
-                  <Icon size={22} className="text-sky-300" />
+                <motion.div key={title} initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: index * 0.1 }} className="flex items-center gap-3 rounded-3xl border border-slate-200/80 bg-slate-50 px-4 py-4 shadow-sm">
+                  <Icon size={22} className="text-sky-600" />
                   <div>
-                    <p className="text-sm font-semibold text-slate-100">{title}</p>
+                    <p className="text-sm font-semibold text-slate-950">{title}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
-            <div className="rounded-[1.8rem] border border-slate-700/80 bg-slate-950/90 p-5">
-              <div className="mb-4 flex items-center justify-between text-sm text-slate-400">
+            <div className="rounded-[1.8rem] border border-slate-200/80 bg-slate-50 p-5">
+              <div className="mb-4 flex items-center justify-between text-sm text-slate-500">
                 <span>terminal.sh</span>
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-rose-400" />
-                  <span className="h-2 w-2 rounded-full bg-amber-400" />
-                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                  <span className="h-2 w-2 rounded-full bg-rose-500" />
+                  <span className="h-2 w-2 rounded-full bg-amber-500" />
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
                 </div>
               </div>
-              <div className="space-y-3 font-mono text-sm leading-7 text-slate-200">
+              <div className="space-y-3 font-mono text-sm leading-7 text-slate-700">
                 {commands.map((command, index) => (
                   <motion.div key={command} initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.08 * index }} className="flex items-center gap-3">
                     <span className="text-sky-300">$</span>
@@ -102,7 +102,7 @@ export default function HeroSection() {
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {['AWS', 'Azure', 'Kubernetes', 'Terraform', 'GitOps', 'DevSecOps'].map((tag) => (
-                <span key={tag} className="rounded-3xl border border-slate-700/70 bg-slate-950/70 px-4 py-3 text-sm text-slate-200 shadow-sm">
+                <span key={tag} className="rounded-3xl border border-slate-200/70 bg-slate-100 px-4 py-3 text-sm text-slate-700 shadow-sm">
                   {tag}
                 </span>
               ))}

@@ -36,15 +36,15 @@ const categories = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="mt-24 rounded-[2rem] border border-slate-700/50 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/90 p-8 shadow-glow backdrop-blur-xl">
+    <section id="skills" className="mt-24 rounded-[2rem] border border-slate-200/80 bg-white/95 p-8 shadow-glow">
       <SectionHeader title="Skills" description="Technical strength" />
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {categories.map((category, index) => (
-          <motion.div key={category.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08 }} className="rounded-[2rem] border border-slate-700/70 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/95 p-6 shadow-sm transition hover:-translate-y-1 hover:border-fuchsia-400/30">
-            <h3 className="mb-4 text-lg font-semibold text-slate-100">{category.title}</h3>
+          <motion.div key={category.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08 }} className="rounded-[2rem] border border-slate-200/70 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-300/40">
+            <h3 className="mb-4 text-lg font-semibold text-slate-950">{category.title}</h3>
             <div className="grid gap-2">
               {category.items.map((item) => (
-                <span key={item} className="rounded-3xl bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-slate-950/90 px-4 py-3 text-sm text-slate-200 shadow-sm shadow-sky-500/10">
+                <span key={item} className="rounded-3xl bg-slate-100 px-4 py-3 text-sm text-slate-700 shadow-sm shadow-sky-100">
                   {item}
                 </span>
               ))}

@@ -48,18 +48,18 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="mt-24 rounded-[2rem] border border-slate-700/50 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/90 p-8 shadow-glow backdrop-blur-xl">
+    <section id="experience" className="mt-24 rounded-[2rem] border border-slate-200/80 bg-white/95 p-8 shadow-glow">
       <SectionHeader title="Experience" description="Professional timeline" />
       <div className="grid gap-6 lg:grid-cols-3">
         {experiences.map((experience, index) => (
-          <motion.div key={experience.company} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.5 }} className="rounded-[2rem] border border-slate-700/70 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-950/95 p-6 shadow-sm transition hover:-translate-y-1 hover:border-fuchsia-400/30">
-            <div className="mb-4 space-y-2 text-slate-300">
-              <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/95">{experience.company}</p>
-              <h3 className="text-xl font-semibold text-slate-100">{experience.title}</h3>
-              <p className="text-sm text-slate-300">{experience.date}</p>
-              <p className="text-sm text-slate-300">{experience.location}</p>
+          <motion.div key={experience.company} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.5 }} className="rounded-[2rem] border border-slate-200/70 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-300/40">
+            <div className="mb-4 space-y-2 text-slate-700">
+              <p className="text-xs uppercase tracking-[0.3em] text-sky-600/95">{experience.company}</p>
+              <h3 className="text-xl font-semibold text-slate-950">{experience.title}</h3>
+              <p className="text-sm text-slate-600">{experience.date}</p>
+              <p className="text-sm text-slate-600">{experience.location}</p>
             </div>
-            <ul className="space-y-3 text-sm leading-7 text-slate-300">
+            <ul className="space-y-3 text-sm leading-7 text-slate-600">
               {experience.highlights.map((item) => (
                 <li key={item} className="flex gap-3">
                   <span className="mt-1 h-2 w-2 rounded-full bg-sky-400" />
