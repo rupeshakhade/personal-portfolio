@@ -50,8 +50,8 @@ export default function GithubSection() {
 
         setRepos(repoList);
         setStats({
-          stars: repoList.reduce((acc, repo) => acc + repo.stargazers_count, 0),
-          forks: repoList.reduce((acc, repo) => acc + repo.forks_count, 0),
+          stars: repoList.reduce((acc: number, repo: Repo) => acc + repo.stargazers_count, 0),
+          forks: repoList.reduce((acc: number, repo: Repo) => acc + repo.forks_count, 0),
           repos: userData.public_repos ?? 0,
           followers: userData.followers ?? 0,
         });
